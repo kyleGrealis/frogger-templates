@@ -1,0 +1,26 @@
+logo:
+  large: logos/teek.png
+  small: ''
+
+color:
+  palette:
+    green: '#005030'
+    orange: '#f47321'
+    gray: '#f9f9f9'
+  primary: green
+
+typography:
+  fonts:
+  - family: Google Sans
+    source: google
+  - family: Fira Code
+    source: bunny
+  base: Google Sans
+  headings:
+    color: green
+  monospace: Fira Code
+  monospace-inline:
+    color: green
+    background-color: gray
+  link:
+    color: green
