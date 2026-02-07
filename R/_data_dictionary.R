@@ -10,6 +10,4 @@
 dictionary <- dplyr::tribble(
   ~Variable, ~Description,
   # "var1", "Label of var1",
-  "species", "Species",
-  "island", "Island"
 )

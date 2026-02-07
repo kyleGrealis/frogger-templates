@@ -8,3 +8,7 @@
 # Don't use relative paths!
 source(here::here("R", "_libraries.R"))
 source(here::here("R", "_data_dictionary.R"))
+
+
+# Use JAMA table theme from sumExtras
+use_jama_theme()

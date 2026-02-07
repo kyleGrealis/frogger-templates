@@ -1,53 +1,26 @@
-# History files
+# R
 .Rhistory
 .Rapp.history
-
-# Session data
 .RData
-
-# Project files
-.Rproj.user/
-
-# RStudio files
-.Rproj
-
-# R package build artifacts
-.Rbuildignore
-.Rinstignore
-.Rcheck/
 .Rprofile
 .Renviron
-.DS_Store
+.Rproj.user/
 
-# Secure your data
-data/
-
-# Markdown/Quarto artifacts
-*.html
-*.pdf
-*.tex
-*.log
-*.aux
-*.bbl
-*.blg
-*.toc
-*.snm
-*.nav
-*.out
-*.vrb
-*.synctex.gz
-_book/
-_site/
-_freeze/
-
+# Quarto
 /.quarto/
 **/*.quarto_ipynb
+_site/
+_freeze/
+docs/
+
+# Data
+data/
+
+# OS
+.DS_Store
 
 # LLM & AI
 CLAUDE.md
 .claude/
 GEMINI.md
 .gemini/
-
-# Optional
-docs/

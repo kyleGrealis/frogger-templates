@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Set max width for gt tables
   document.querySelectorAll('.gt_table').forEach(function(table) {
-    table.style.maxWidth = '90%';  // Adjust this value as needed
-    table.style.margin = '0 auto';   // Center the table
+    table.style.maxWidth = '90%';
+    table.style.margin = '0 auto';
   });
-  
+
   // Set max width for regular tables
   document.querySelectorAll('table').forEach(function(table) {
-    table.style.maxWidth = '85%';  // Adjust this value as needed
-    table.style.margin = '0 auto';   // Center the table
+    table.style.maxWidth = '90%';
+    table.style.margin = '0 auto';
   });
 });

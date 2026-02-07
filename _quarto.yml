@@ -1,27 +1,23 @@
 project:
-  title: "froggeR Revamp"
+  title: "Project Title"
   type: website
-  output-dir: ../docs
+  output-dir: docs
   resources: www
+  render:
+    - "pages/*.qmd"
 
 website:
-  title: "froggeR Revamp"
+  title: "Project Title"
   navbar:
     right:
       - icon: github
-        href: https://github.com/kyleGrealis
+        href: ''
         target: _blank
   sidebar:
     style: docked
     contents:
       - text: Home
         href: pages/index.qmd
-      - text: Frogs Yeah
-        href: pages/frogger-revamp.qmd
-      # - section: Analysis
-      #   contents:
-      #     - text: Frogs Yeah
-      #       href: pages/frogger-revamp.qmd
 
 format:
   html:
