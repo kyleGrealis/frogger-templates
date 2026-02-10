@@ -1,4 +1,4 @@
-/* index.js
+/* www/tables.js
 Purpose:
 This file will remove table row striping from gtsummary tables on output.
 
