@@ -39,7 +39,7 @@ format:
       margin-width: 200px
     include-after-body:
       text: |
-        <script src="../www/index.js"></script>
+        <script src="../www/tables.js"></script>
 
 number-sections: false
 editor: source
