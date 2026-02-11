@@ -13,3 +13,4 @@ source(here::here("R", "_data_dictionary.R"))
 # sumExtras configuration
 use_jama_theme()
 options(sumExtras.auto_labels = TRUE)
+options(sumExtras.prefer_dictionary = TRUE)
