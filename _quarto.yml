@@ -4,20 +4,20 @@ project:
   output-dir: docs
   resources: www
   render:
-    - "pages/*.qmd"
+    - "analysis/*.qmd"
 
 website:
   title: "Project Title"
   navbar:
     right:
       - icon: github
-        href: ''
+        href: ""
         target: _blank
   sidebar:
     style: docked
     contents:
       - text: Home
-        href: pages/index.qmd
+        href: analysis/index.qmd
 
 format:
   html:

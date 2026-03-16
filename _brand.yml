@@ -1,12 +1,12 @@
 logo:
   large: logos/teek.png
-  small: ''
+  small: ""
 
 color:
   palette:
-    green: '#005030'
-    orange: '#f47321'
-    gray: '#f9f9f9'
+    green: "#005030"
+    orange: "#f47321"
+    gray: "#f9f9f9"
   primary: green
 
 typography:
