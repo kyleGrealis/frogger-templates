@@ -12,7 +12,7 @@ color:
 typography:
   fonts:
   - family: Google Sans
-    source: google
+    source: bunny
   - family: Fira Code
     source: bunny
   base: Google Sans

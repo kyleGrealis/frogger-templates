@@ -44,8 +44,12 @@ Configure the project's identity (`_variables.yml`, `_brand.yml`, `_quarto.yml`,
          - name: "{{< var affiliations >}}"
    ```
    *(Only include `{{< var field >}}` keys that are non-empty in `_variables.yml`).*
-2. **Update `_brand.yml` & Optimize `logos/`**:
-   * Ensure all hex colors in `color.palette` are quoted strings (e.g., `"#005030"`) and `color.primary` references a valid key in `color.palette`.
+2. **Update `_brand.yml` & Use Quarto `{{< brand >}}` Shortcodes for Logos**:
+   * Ensure all hex colors in `color.palette` are quoted strings (e.g., `"#005030"`), `color.primary` references a valid key in `color.palette`, and fonts default to `source: bunny`.
+   * **Register & Embed Logos the Quarto Way (`{{< brand logo ... >}}`)**:
+     * Define logos in `_brand.yml` under `logo:` (`small`, `medium`, `large`, or named keys under `logo.images:`).
+     * Whenever embedding a logo or brand asset inside a `.qmd` document (or YAML frontmatter), **always use Quarto's native `{{< brand logo small >}}` (or `medium`, `large`, or `{{< brand logo <name> >}}`) shortcode**—never hardcode raw relative Markdown image paths like `![](../logos/...)`.
+     * Similarly, use `{{< brand color primary >}}` (or palette key names) and `{{< var <field> >}}` shortcodes when referencing brand colors or `_variables.yml` metadata in `.qmd` files.
    * **Keep Logo File Sizes Small (`<= 400px`)**: Because `_quarto.yml` sets `embed-resources: true` to produce self-contained `.html` files, large camera photos in `logos/` will bloat rendered HTML files. Whenever adding or downloading an image into `logos/`, check its dimensions/size and resize it if larger than `400px` wide (e.g., `sips -Z 400 logos/<file>` on macOS).
 3. **Update `_quarto.yml`, `analysis/index.qmd`, & `README.md`**:
    * Set `project.title` in `_quarto.yml` and `title` (plus optional `subtitle`) in `analysis/index.qmd`.

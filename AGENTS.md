@@ -22,7 +22,8 @@ This project follows the `{froggeR}` research compendium architecture for R and 
 * **`www/` (Web Assets & Styling)**:
   * Place custom SCSS files (`www/custom.scss`), JavaScript (`www/tables.js`), and static web assets in `www/`.
 * **`logos/` & Branding**:
-  * Place project and institutional logos in `logos/` and reference them in `_brand.yml`.
+  * Place project and institutional logos in `logos/` and reference them in `_brand.yml` (using `source: bunny` for web fonts).
+  * Always use Quarto shortcodes (`{{< brand logo small|medium|large|<name> >}}`, `{{< brand color ... >}}`, and `{{< var ... >}}`) inside `.qmd` documents instead of hardcoded `![](../logos/...)` image paths.
 * **`data/` (Local Data Directory)**:
   * Store raw and processed datasets in `data/` (gitignored by default). Never commit sensitive or raw participant data to version control.
 

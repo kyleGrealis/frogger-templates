@@ -28,8 +28,9 @@ Maintain the `{froggeR}` research compendium layout (`R/`, `analysis/`, `www/`, 
    source(here::here("R", "_load.R"))
    ```
    ````
-3. **Wire Author Metadata (If Configured)**:
-   If `_variables.yml` has populated values (`name`, `email`, `orcid`, `affiliations`), wire them via Quarto `{{< var ... >}}` shortcodes in `_quarto.yml` (project-wide) or in the document YAML frontmatter.
+3. **Use Quarto Shortcodes for Metadata & Logos (`{{< var >}}` & `{{< brand >}}`)**:
+   * Wire author metadata from `_variables.yml` via `{{< var <field> >}}` shortcodes in `_quarto.yml` (project-wide) or in the document YAML frontmatter.
+   * Whenever placing a project logo or brand color inside a `.qmd` document, **always use Quarto's native brand shortcodes** (`{{< brand logo small >}}`, `{{< brand logo medium >}}`, `{{< brand logo large >}}`, `{{< brand logo <name> >}}`, or `{{< brand color primary >}}`) rather than hardcoded relative Markdown image links (`![](../logos/...)`).
 4. **Update `_quarto.yml` (Only If Using `type: website`)**:
    By default, `_quarto.yml` renders standalone, self-contained HTML documents (`embed-resources: true`) into `docs/analysis/`. If the user has converted `_quarto.yml` into a multi-page website (`project.type: website`), also add the new `.qmd` file under `website.sidebar.contents`.
 
