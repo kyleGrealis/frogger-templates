@@ -13,6 +13,7 @@
 ├── .agents/              # AI agent skills for project scaffolding and maintenance
 │   └── skills/
 │       ├── frogger-brand/
+│       ├── frogger-commit/
 │       ├── frogger-devlog/
 │       └── frogger-workflow/
 ├── R/                    # R scripts only
@@ -45,9 +46,10 @@
 
 This project includes built-in instructions (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`) and skills (`.agents/skills/`) so AI coding assistants automatically follow `{froggeR}` conventions:
 
-- **`frogger-workflow`**: Scaffolds new Quarto pages in `analysis/`, registers them in `_quarto.yml`, routes packages to `R/_libraries.R`, maintains `R/_data_dictionary.R`, and manages styles in `www/`.
-- **`frogger-brand`**: Interactively configures `_variables.yml` and `_brand.yml`, wires metadata into documents, and saves global defaults via `froggeR::save_variables()` and `froggeR::save_brand()`.
+- **`frogger-workflow`**: Scaffolds new Quarto documents in `analysis/`, routes packages to `R/_libraries.R`, maintains `R/_data_dictionary.R`, and manages styles in `www/`.
+- **`frogger-brand`**: Configures `_variables.yml` and `_brand.yml`, wires metadata/logo shortcodes into documents, and saves global defaults via `froggeR::save_variables()` and `froggeR::save_brand()`.
 - **`frogger-devlog`**: Audits code comments, records methodology and analytical choices in `DECISIONS.md`, and maintains `CHANGELOG.md`.
+- **`frogger-commit`**: Drafts structured `type(scope): summary` git commit messages with 2-space indented bullets.
 
 ## References
 

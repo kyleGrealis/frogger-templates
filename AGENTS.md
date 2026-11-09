@@ -55,3 +55,5 @@ Activate the specialized skills in `.agents/skills/` when performing these workf
    Use when setting up or updating author metadata (`_variables.yml`), visual branding (`_brand.yml`), logos (`logos/`), or saving settings globally via `froggeR::save_variables()` and `froggeR::save_brand()`.
 3. **`frogger-devlog`** (`.agents/skills/frogger-devlog/SKILL.md`):
    Use when auditing code comments, logging analytical or technical decisions in `DECISIONS.md`, or updating `CHANGELOG.md`.
+4. **`frogger-commit`** (`.agents/skills/frogger-commit/SKILL.md`):
+   Use when drafting git commit messages or committing project changes (`type(scope): summary` header `<= 72` chars with 2-space indented bullets and zero AI attribution trailers).

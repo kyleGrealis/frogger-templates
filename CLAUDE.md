@@ -7,3 +7,4 @@ This is a `{froggeR}` R and Quarto project.
    * `.agents/skills/frogger-workflow/SKILL.md`: Adding Quarto pages, R scripts, data dictionary entries, and SCSS styles.
    * `.agents/skills/frogger-brand/SKILL.md`: Interactive setup and global persistence for `_variables.yml`, `_brand.yml`, and `logos/`.
    * `.agents/skills/frogger-devlog/SKILL.md`: Auditing code comments, recording decisions in `DECISIONS.md`, and maintaining `CHANGELOG.md`.
+   * `.agents/skills/frogger-commit/SKILL.md`: Drafting structured git commit messages (`type(scope): summary` + 2-space indented bullets).
