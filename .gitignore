@@ -18,3 +18,8 @@ data/
 
 # OS
 .DS_Store
+
+# AI Agent Skills (explicitly tracked even if .agents/ is in global git ignore)
+!.agents/
+!.agents/skills/
+!.agents/skills/**
