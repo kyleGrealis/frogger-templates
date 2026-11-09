@@ -2,12 +2,14 @@ project:
   title: "Project Title"
   type: website
   output-dir: docs
+  execute-dir: project
   resources: www
   render:
     - "analysis/*.qmd"
 
 website:
   title: "Project Title"
+  page-navigation: true
   navbar:
     right:
       - icon: github
@@ -15,6 +17,7 @@ website:
         target: _blank
   sidebar:
     style: docked
+    search: true
     contents:
       - text: Home
         href: analysis/index.qmd

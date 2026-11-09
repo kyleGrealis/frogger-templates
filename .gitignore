@@ -18,9 +18,3 @@ data/
 
 # OS
 .DS_Store
-
-# LLM & AI
-CLAUDE.md
-.claude/
-GEMINI.md
-.gemini/
