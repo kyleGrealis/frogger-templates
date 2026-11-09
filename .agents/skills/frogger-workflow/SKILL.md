@@ -104,3 +104,5 @@ After adding or modifying `.qmd` files, `R/` scripts, or `_quarto.yml`:
    ```bash
    $(command -v quarto || ls /Applications/Positron.app/Contents/Resources/app/quarto/bin/quarto /Applications/RStudio.app/Contents/Resources/app/quarto/bin/quarto 2>/dev/null | head -n 1) render
    ```
+3. **Never `grep`, `sed`, or `read_file` on rendered `docs/analysis/*.html` files**:
+   Because `embed-resources: true` base64/URL-encodes fonts, stylesheets, and images into single multi-megabyte lines, inspecting the raw `.html` wastes tool calls. Trust a `0` exit code from `quarto render`.

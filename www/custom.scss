@@ -29,3 +29,11 @@ img.sidebar-logo {
 section p a:hover {
   text-decoration: none;
 }
+
+// Quarto {{< brand logo >}} shortcodes emit bare <img> tags directly under
+// <section> rather than inside <p>. Display them as blocks so consecutive
+// logos on separate lines stack vertically instead of sitting side-by-side.
+section > img.img-fluid {
+  display: block;
+  margin-bottom: 1rem;
+}

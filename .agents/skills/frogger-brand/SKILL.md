@@ -58,6 +58,7 @@ Configure the project's identity (`_variables.yml`, `_brand.yml`, `_quarto.yml`,
    ```bash
    $(command -v quarto || ls /Applications/Positron.app/Contents/Resources/app/quarto/bin/quarto /Applications/RStudio.app/Contents/Resources/app/quarto/bin/quarto 2>/dev/null | head -n 1) render
    ```
+   *(Do not `grep`, `sed`, or `read_file` on rendered `docs/analysis/*.html` files, as `embed-resources: true` URL/base64-encodes styles and images into multi-megabyte lines. Trust the `0` exit code of `quarto render`.)*
 
 ---
 

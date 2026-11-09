@@ -18,7 +18,7 @@ This project follows the `{froggeR}` research compendium architecture for R and 
 * **`analysis/` (Quarto Narrative Documents)**:
   * All `.qmd` files live in `analysis/` (`analysis/index.qmd` is the primary analysis document).
   * Keep `.qmd` code chunks focused on displaying tables, plots, and inline results rather than heavy data cleaning.
-  * By default, `_quarto.yml` renders standalone, self-contained HTML reports (`embed-resources: true`) to `docs/analysis/`. If the project uses `type: website` in `_quarto.yml`, register new `.qmd` files under `website.sidebar.contents`.
+  * By default, `_quarto.yml` renders standalone, self-contained HTML reports (`embed-resources: true`) to `docs/analysis/`. Because `embed-resources: true` base64/URL-encodes assets onto multi-megabyte lines in `docs/analysis/*.html`, never run `grep`, `sed`, or `read_file` on rendered `.html` files; verify success via the `0` exit code of `quarto render`.
 * **`www/` (Web Assets & Styling)**:
   * Place custom SCSS files (`www/custom.scss`), JavaScript (`www/tables.js`), and static web assets in `www/`.
 * **`logos/` & Branding**:
