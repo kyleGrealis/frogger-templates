@@ -1,6 +1,6 @@
 ---
 name: frogger-workflow
-description: Add new Quarto analysis documents, R scripts, package dependencies, data dictionary labels, and custom SCSS styling following froggeR project architecture. Activate whenever adding or organizing files, scripts, tables, or Quarto pages in this project.
+description: Add new Quarto analysis documents, R scripts, package dependencies, data dictionary labels, and custom SCSS styling following froggeR project architecture. Activate whenever adding or organizing files, scripts, tables, or Quarto documents in this project.
 ---
 
 # `{froggeR}` Project Workflow Skill
@@ -9,7 +9,7 @@ Maintain the `{froggeR}` research compendium layout (`R/`, `analysis/`, `www/`, 
 
 ---
 
-## 1. Adding a New Quarto Page (`analysis/*.qmd`)
+## 1. Adding a New Quarto Document (`analysis/*.qmd`)
 
 1. **Create the File in `analysis/`**:
    * Name the file using `snake_case` or `kebab-case` (letters, numbers, hyphens, and underscores only): `analysis/<page_name>.qmd`.
@@ -18,7 +18,7 @@ Maintain the `{froggeR}` research compendium layout (`R/`, `analysis/`, `www/`, 
    Every `.qmd` file in `analysis/` must source `R/_load.R` in its `setup` chunk and use YAML hashpipe chunk options (`#|`):
    ````markdown
    ---
-   title: "<Page Title>"
+   title: "<Document Title>"
    date: last-modified
    ---
 
@@ -29,20 +29,9 @@ Maintain the `{froggeR}` research compendium layout (`R/`, `analysis/`, `www/`, 
    ```
    ````
 3. **Wire Author Metadata (If Configured)**:
-   If `_variables.yml` has populated values (`name`, `email`, `orcid`, `affiliations`), wire them via Quarto `{{< var ... >}}` shortcodes when the user wants author attribution on the page or in `_quarto.yml`.
-4. **Register in `_quarto.yml` Navigation**:
-   Add the new page under `website.sidebar.contents` in `_quarto.yml` so it appears in the docked sidebar:
-   ```yaml
-   website:
-     sidebar:
-       style: docked
-       search: true
-       contents:
-         - text: Home
-           href: analysis/index.qmd
-         - text: <Page Title>
-           href: analysis/<page_name>.qmd
-   ```
+   If `_variables.yml` has populated values (`name`, `email`, `orcid`, `affiliations`), wire them via Quarto `{{< var ... >}}` shortcodes in `_quarto.yml` (project-wide) or in the document YAML frontmatter.
+4. **Update `_quarto.yml` (Only If Using `type: website`)**:
+   By default, `_quarto.yml` renders standalone, self-contained HTML documents (`embed-resources: true`) into `docs/analysis/`. If the user has converted `_quarto.yml` into a multi-page website (`project.type: website`), also add the new `.qmd` file under `website.sidebar.contents`.
 
 ---
 
@@ -96,6 +85,7 @@ Whenever new variables are created or summarized in `gtsummary::tbl_summary()` /
      ```yaml
      format:
        html:
+         embed-resources: true
          theme:
            - default
            - brand
@@ -107,6 +97,9 @@ Whenever new variables are created or summarized in `gtsummary::tbl_summary()` /
 
 ## 5. Verification
 
-After adding or modifying `.qmd` pages, `R/` scripts, or `_quarto.yml`:
+After adding or modifying `.qmd` files, `R/` scripts, or `_quarto.yml`:
 1. Verify all `source()` and data paths use `here::here()`.
-2. Run `quarto render` from the project root to confirm all pages in `analysis/` render cleanly to `docs/` with zero errors.
+2. Render the project from the project root using Quarto (supporting system PATH, Positron, and RStudio bundled binaries):
+   ```bash
+   $(command -v quarto || ls /Applications/Positron.app/Contents/Resources/app/quarto/bin/quarto /Applications/RStudio.app/Contents/Resources/app/quarto/bin/quarto 2>/dev/null | head -n 1) render
+   ```

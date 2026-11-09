@@ -16,9 +16,9 @@ This project follows the `{froggeR}` research compendium architecture for R and 
   * Every Quarto document in `analysis/` begins by sourcing `source(here::here("R", "_load.R"))`.
   * Keep data wrangling, helper functions, and modeling scripts modular in `R/` (e.g., `R/clean_data.R`, `R/models.R`) and source them inside `R/_load.R` in dependency order.
 * **`analysis/` (Quarto Narrative Documents)**:
-  * All `.qmd` files live in `analysis/` (`analysis/index.qmd` is the website home page).
+  * All `.qmd` files live in `analysis/` (`analysis/index.qmd` is the primary analysis document).
   * Keep `.qmd` code chunks focused on displaying tables, plots, and inline results rather than heavy data cleaning.
-  * When adding a new `.qmd` file in `analysis/`, register it under `website.sidebar.contents` in `_quarto.yml`.
+  * By default, `_quarto.yml` renders standalone, self-contained HTML reports (`embed-resources: true`) to `docs/analysis/`. If the project uses `type: website` in `_quarto.yml`, register new `.qmd` files under `website.sidebar.contents`.
 * **`www/` (Web Assets & Styling)**:
   * Place custom SCSS files (`www/custom.scss`), JavaScript (`www/tables.js`), and static web assets in `www/`.
 * **`logos/` & Branding**:

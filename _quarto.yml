@@ -1,29 +1,16 @@
 project:
   title: "Project Title"
-  type: website
   output-dir: docs
   execute-dir: project
-  resources: www
+  resources:
+    - www
+    - logos
   render:
     - "analysis/*.qmd"
 
-website:
-  title: "Project Title"
-  page-navigation: true
-  navbar:
-    right:
-      - icon: github
-        href: ""
-        target: _blank
-  sidebar:
-    style: docked
-    search: true
-    contents:
-      - text: Home
-        href: analysis/index.qmd
-
 format:
   html:
+    embed-resources: true
     theme:
       - default
       - brand
